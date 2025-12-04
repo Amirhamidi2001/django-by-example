@@ -226,3 +226,41 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.step-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.step-links a,
+.step-links .current {
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #374151;
+    transition: all 0.2s ease;
+}
+
+.step-links a:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+/* Highlight the active/current page */
+.step-links .current {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+    cursor: default;
+}
