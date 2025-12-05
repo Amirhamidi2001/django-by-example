@@ -264,3 +264,65 @@ footer {
     border-color: #2563eb;
     cursor: default;
 }
+
+.share-container {
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.share-form p {
+    margin-bottom: 16px;
+}
+
+.share-form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.share-form input[type="text"],
+.share-form input[type="email"],
+.share-form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color .2s ease;
+}
+
+.share-form input:focus,
+.share-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.share-button {
+    margin-top: 12px;
+    padding: 10px 18px;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .25s ease;
+}
+
+.share-button:hover {
+    background: #005fcc;
+}
+
+.share-success {
+    padding: 18px;
+    background: #e7f8ed;
+    border-left: 4px solid #38a169;
+    border-radius: 6px;
+    color: #2f855a;
+    font-size: 16px;
+}

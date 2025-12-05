@@ -24,7 +24,9 @@
       </header>
 
       <div class="post-body">{{ post.body|linebreaks }}</div>
-
+      <p class="post-footer">
+        <a href="{% url 'blog:post_share' post.id %}" class="back-link">Share this post</a>
+      </p>
       <footer class="post-footer">
         <a href="{% url 'blog:post_list' %}" class="back-link">← Back to all posts</a>
       </footer>

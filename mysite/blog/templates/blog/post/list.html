@@ -30,6 +30,6 @@
     {% else %}
       <p class="no-posts">No posts available yet.</p>
     {% endif %}
-    {% include 'pagination.html' with page=posts %}
+    {% include 'pagination.html' with page=page_obj %}
   </main>
 {% endblock %}
