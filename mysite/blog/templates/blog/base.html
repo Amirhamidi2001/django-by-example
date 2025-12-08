@@ -1,3 +1,4 @@
+{% load blog_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -77,24 +78,27 @@
           <!-- About Section -->
           <div>
             <h3 class="text-lg font-semibold text-gray-900 mb-4">درباره وبلاگ</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              تاکنون{% total_posts %}پست منتشر شده است
+            </p>
             <p class="text-gray-600 text-sm leading-relaxed">وبلاگی برای به اشتراک گذاشتن افکار، داستان‌ها و ایده‌های جالب. جایی برای یادگیری و تجربه‌های جدید.</p>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Most commented posts Links -->
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">دسترسی سریع</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">بیشترین کامنت ها</h3>
+            {% get_most_commented_posts 3 as most_commented_posts %}
             <ul class="space-y-2">
-              <li>
-                <a href="{% url 'blog:post_list' %}" class="text-gray-600 hover:text-blue-600 text-sm transition-colors"><i class="fas fa-chevron-left ml-2 text-xs"></i>صفحه اصلی</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-blue-600 text-sm transition-colors"><i class="fas fa-chevron-left ml-2 text-xs"></i>آرشیو مطالب</a>
-              </li>
-              <li>
-                <a href="#" class="text-gray-600 hover:text-blue-600 text-sm transition-colors"><i class="fas fa-chevron-left ml-2 text-xs"></i>تماس با ما</a>
-              </li>
+              {% for post in most_commented_posts %}
+                <li>
+                  <a href="{{ post.get_absolute_url }}" class="text-gray-600 hover:text-blue-600 text-sm transition-colors"><i class="fas fa-chevron-left ml-2 text-xs"></i>{{ post.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
+
+          <!-- Latest Posts Links -->
+          {% show_latest_posts 3 %}
 
           <!-- Social Media -->
           <div>

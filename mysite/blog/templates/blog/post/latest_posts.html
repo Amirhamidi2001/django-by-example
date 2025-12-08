@@ -1,0 +1,11 @@
+<!-- Latest posts -->
+<div>
+  <h3 class="text-lg font-semibold text-gray-900 mb-4">جدیدترین پست ها</h3>
+  <ul class="space-y-2">
+    {% for post in latest_posts %}
+      <li>
+        <a href="{{ post.get_absolute_url }}" class="text-gray-600 hover:text-blue-600 text-sm transition-colors"><i class="fas fa-chevron-left ml-2 text-xs"></i>{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
